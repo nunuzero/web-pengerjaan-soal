@@ -26,7 +26,7 @@ class GroupClassResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('category')
+                Forms\Components\TextInput::make('group')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -38,7 +38,7 @@ class GroupClassResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('category')
+                Tables\Columns\TextColumn::make('group')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -11,6 +11,6 @@ class GroupClass extends Model
 
     protected $fillable = [
         'name',
-        'category',
+        'group',
     ];
 }
