@@ -1,0 +1,3 @@
+<div>
+    {{ count($getState()) }}
+</div>
