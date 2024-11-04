@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\QuestionResource\Pages;
 use App\Filament\Resources\QuestionResource\RelationManagers;
 use App\Models\Question;
+use App\Tables\Columns\CountingAnswers;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Forms\Components\Repeater;
@@ -55,6 +56,8 @@ class QuestionResource extends Resource
                 Tables\Columns\TextColumn::make('explanation')
                     ->html()
                     ->searchable(),
+                CountingAnswers::make('answers')
+                ,
             ])
             ->filters([
                 //
