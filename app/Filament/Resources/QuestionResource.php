@@ -43,6 +43,7 @@ class QuestionResource extends Resource
                             ->onIcon('heroicon-m-check')
                             ->offIcon('heroicon-m-x-mark')
                     ])
+                    ->grid(2),
             ]);
     }
 
@@ -56,8 +57,7 @@ class QuestionResource extends Resource
                 Tables\Columns\TextColumn::make('explanation')
                     ->html()
                     ->searchable(),
-                CountingAnswers::make('answers')
-                ,
+                CountingAnswers::make('answers'),
             ])
             ->filters([
                 //
