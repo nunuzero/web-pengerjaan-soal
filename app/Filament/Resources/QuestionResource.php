@@ -43,11 +43,14 @@ class QuestionResource extends Resource
                     ->columnSpanFull()
                     ->schema([
                         RichEditor::make('answer')
+                            ->required()
                             ->label('Answer'),
                         Toggle::make('is_the_right_answer')
+                            ->fixIndistinctState()
+                            ->required()
                             ->label('Correct Answer')
                             ->onIcon('heroicon-m-check')
-                            ->offIcon('heroicon-m-x-mark')
+                            ->offIcon('heroicon-m-x-mark'),
                     ])
                     ->grid(2)
                     ->defaultItems(4)
