@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('group_classes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('group');
+            $table->foreignId('subject_id')->constrained('subjects')->cascadeOnDelete();
+            $table->foreignId('major_id')->constrained('majors')->cascadeOnDelete();
             $table->timestamps();
         });
     }
