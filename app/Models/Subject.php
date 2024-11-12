@@ -14,7 +14,7 @@ class Subject extends Model
         'name',
     ];
 
-    public function groupClasses(): HasMany
+    public function groupClass(): HasMany
     {
         return $this->hasMany(GroupClass::class);
     }
