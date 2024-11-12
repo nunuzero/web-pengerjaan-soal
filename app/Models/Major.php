@@ -15,7 +15,7 @@ class Major extends Model
         'short_name',
     ];
 
-    public function GroupClasses(): HasMany
+    public function groupClasses(): HasMany
     {
         return $this->hasMany(GroupClass::class);
     }
