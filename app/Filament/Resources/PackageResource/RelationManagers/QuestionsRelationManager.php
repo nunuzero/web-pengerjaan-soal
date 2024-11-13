@@ -7,6 +7,7 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Forms\Components\Toggle;
+use Filament\Support\Enums\Alignment;
 use App\Tables\Columns\CountingAnswers;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
@@ -48,12 +49,16 @@ class QuestionsRelationManager extends RelationManager
             ->recordTitleAttribute('question')
             ->columns([
                 Tables\Columns\TextColumn::make('question')
+                    ->label('Question')
                     ->html()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('explanation')
+                    ->label('Explanation')
                     ->html()
                     ->searchable(),
-                CountingAnswers::make('answers'),
+                CountingAnswers::make('answers')
+                    ->label('Number of Options')
+                    ->alignment(Alignment::Center),
             ])
             ->filters([
                 //

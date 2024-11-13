@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Major;
+use App\Models\Subject;
 use Filament\Forms\Form;
 use App\Models\GroupClass;
 use Filament\Tables\Table;
@@ -31,7 +32,7 @@ class GroupClassResource extends Resource
                 Select::make('subject_id')
                     ->required()
                     ->label('Subject')
-                    ->relationship('subject', 'name')
+                    ->options(Subject::all()->pluck('name', 'id'))
                     ->native(false)
                     ->searchable(),
                 Select::make('major_id')

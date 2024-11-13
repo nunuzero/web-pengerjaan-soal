@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->dateTimeTz('started_at');
             $table->dateTimeTz('ended_at');
+            $table->foreignId('group_class_id')->constrained('group_classes')->cascadeOnDelete();
             $table->timestamps();
         });
     }
